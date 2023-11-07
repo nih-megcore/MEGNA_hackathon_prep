@@ -18,6 +18,11 @@ for i in 22671 70467 62003 72082 85305 52662 89475 42107 61373 89474 03748 84896
 #Clean channel names -- need to update OPENNEURO
 for i in $(find sub-* -name '*channels.tsv') ; do sed -i 's/-1609//g' $i ; sed -i 's/-2104//g' $i ; done
 
+#Remove extra modalities
+rm -r ./sub-*/ses-01/dwi
+rm -r ./sub-*/ses-01/func
+rm -r ./sub-*/ses-01/perf
+
 #Remove excess mris so mne_bids finds the 1 t1
 find ./sub-*/ses-01/anat -name '*T2w*' -exec rm -r {} \;
 find ./sub-*/ses-01/anat -name '*FLAIR*' -exec rm -r {} \;
