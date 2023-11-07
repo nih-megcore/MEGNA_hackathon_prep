@@ -1,6 +1,6 @@
 # MEGNA_hackathon_prep
 
-Log into helix
+## Log into helix
 ```
 datalad_pull.sh  <<TASK>>   #Download the single task specific datasets and remove the rest of DL skeleton
 fix_hv_dsets.py   #Remove extra MRIs to work with mne_bids
